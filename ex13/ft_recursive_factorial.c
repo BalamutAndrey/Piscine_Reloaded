@@ -1,20 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboris <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 04:26:04 by eboris            #+#    #+#             */
-/*   Updated: 2019/09/03 04:51:36 by eboris           ###   ########.fr       */
+/*   Created: 2019/09/03 04:44:54 by eboris            #+#    #+#             */
+/*   Updated: 2019/09/03 04:48:25 by eboris           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_recursive_factorial(int nb)
 {
-	int fact;
-
-	fact = 1;
 	if ((nb < 0) || (nb > 12))
 	{
 		return (0);
@@ -23,10 +20,5 @@ int	ft_iterative_factorial(int nb)
 	{
 		return (1);
 	}
-	while (nb > 1)
-	{
-		fact = fact * nb;
-		nb--;
-	}
-	return (fact);
+	return (nb * ft_recursive_factorial(nb - 1));
 }

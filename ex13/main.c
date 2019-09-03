@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboris <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/03 04:26:04 by eboris            #+#    #+#             */
-/*   Updated: 2019/09/03 04:51:36 by eboris           ###   ########.fr       */
+/*   Created: 2019/09/03 04:35:27 by eboris            #+#    #+#             */
+/*   Updated: 2019/09/03 04:48:07 by eboris           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
-{
-	int fact;
+#include <stdio.h>
 
-	fact = 1;
-	if ((nb < 0) || (nb > 12))
+int	ft_recursive_factorial(int nb);
+
+int	main(void)
+{
+	int i;
+
+	i = -3;
+	while (i < 15)
 	{
-		return (0);
+		printf("factorial %i = %i\n", i, ft_recursive_factorial(i));
+		i++;
 	}
-	else if ((nb == 0) || (nb == 1))
-	{
-		return (1);
-	}
-	while (nb > 1)
-	{
-		fact = fact * nb;
-		nb--;
-	}
-	return (fact);
+	return (0);
 }
